@@ -23,4 +23,17 @@ router.get('/', (req, res, next) => {
 
 //Products
 
+router.get('/products', catchErrors(getProducts));
+router.get('/products/:id', catchErrors(getProduct));
+router.post('/products', catchErrors(createProduct));
+router.patch('/products/:id', catchErrors(updateProduct));
+router.delete('products/:id', catchErrors(deleteProduct));
+
+//Description
+
+router.get('/description/:id', catchErrors(getDescription));
+router.get('/descriptions', catchErrors(createDescription));
+router.patch('/descriptions/:id', catchErrors(updateDescription));
+router.delete('/descriptions/:id', catchErrors(deleteDescription));
+
 module.exports = router;
